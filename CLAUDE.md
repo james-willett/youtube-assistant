@@ -21,6 +21,8 @@ youtube-video-project/
 │   │   ├── misc/
 │   │   │   ├── time-tracker.md
 │   │   │   └── update-docs.md
+│   │   ├── notion/
+│   │   │   └── notion-assistant.md
 │   │   ├── script/
 │   │   │   ├── script-critic.md
 │   │   │   ├── script-help.md
@@ -340,6 +342,53 @@ Includes: 5 main sections, 8 code examples, resources section
 
 ---
 
+### 📓 @notion-assistant
+**Purpose:** Search, retrieve, and update pages in your Notion workspace
+**Use when:** You need to find a page, view its contents, or add/update content
+**What it does:**
+- Searches "All Notes[UB]" database by title (database ID built-in)
+- Retrieves and displays page contents in readable format
+- Adds content (paragraphs, bullet points, headings, to-dos)
+- Updates page properties (title, status, etc.)
+- Creates new pages in the database
+- Understands your weekly note structure (Goals, Highlights, Lowlights, etc.)
+
+**Built-in Context:**
+- Database ID: `07ef0fac7489461498653f918289d835` (All Notes[UB])
+- Knows weekly note patterns (Week 48 - W/C 24/11/25 format)
+- Understands common sections (Highlights, Lowlights, Lessons Learned, etc.)
+
+**Example usage:**
+```
+@notion-assistant
+> What would you like to do with Notion?
+
+Find my Week 48 page
+> [Searches database for "Week 48"]
+> Found "Week 48 - W/C 24/11/25". Here's the content:
+  - Goals for Coming Week (3 items, 1 completed)
+  - Highlights: 2 items
+  - Lowlights: placeholder
+  [...]
+
+Add a bullet to highlights
+> What highlight would you like to add?
+
+Completed the Notion assistant agent!
+> [Adds bullet point to Highlights section]
+✅ Added "Completed the Notion assistant agent!" to Highlights
+```
+
+**Content Types You Can Add:**
+- Paragraphs (plain text blocks)
+- Bullet points (bulleted_list_item)
+- Numbered lists (numbered_list_item)
+- Headings (heading_1, heading_2, heading_3)
+- To-do items (checkboxes)
+- Toggle sections (collapsible)
+
+---
+
 ## Available Commands
 
 ### /sync-context
@@ -450,6 +499,28 @@ Includes: 5 main sections, 8 code examples, resources section
 /sync-context → GEMINI.md and AGENTS.md updated
 ```
 
+**Managing Notion:**
+```
+@notion-assistant → Find/update weekly notes and project pages
+```
+
+**Quick Notion updates:**
+```
+# Add a highlight to this week's note
+@notion-assistant
+> Find Week [current week]
+> Add to highlights: [your accomplishment]
+
+# View any page
+@notion-assistant
+> Find [page name]
+> [View contents]
+
+# Create a new page
+@notion-assistant
+> Create page: [title]
+```
+
 ---
 
 ## Content Types Supported
@@ -513,6 +584,13 @@ All agents adapt based on these content types:
 - **File:** PUBLISH_METADATA.md
 - **Created by:** @pre-upload
 - **Contains:** Description, tags, pinned comment, LinkedIn post, checklist
+
+### Notion Integration
+- **Agent:** @notion-assistant
+- **Database:** All Notes[UB] (ID: 07ef0fac7489461498653f918289d835)
+- **Use cases:** Weekly note management, project page tracking, content organization
+- **Actions:** Search, retrieve, add content, update properties, create pages
+- **MCP Server:** Notion MCP integration required
 
 ---
 
@@ -579,6 +657,12 @@ Planned features not yet implemented:
 - Commands are quick - just run them when needed
 - Experiment with different agents for different moods/needs
 
+### Notion Management
+- Use @notion-assistant to quickly log accomplishments to weekly notes
+- Add highlights after completing major tasks
+- Review your week by reading the page with @notion-assistant
+- The agent knows your database structure - no need to provide IDs each time
+
 ---
 
 ## Technical Details
@@ -587,6 +671,7 @@ Planned features not yet implemented:
 - Claude Code (installed and configured)
 - Node.js (for sync script)
 - Git (optional, for version control)
+- Notion MCP Server (for @notion-assistant integration)
 
 ### File Locations
 - **Agents:** `.claude/agents/*.md`
