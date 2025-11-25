@@ -35,6 +35,9 @@ youtube-video-project/
 │   └── hooks/
 │       ├── context-file-sync.js
 │       └── context-file-sync.md
+├── context/
+│   ├── 01-universal-principles.md (framework: 8 laws of YouTube success)
+│   └── 02-james-willett-framework.md (framework: content-type patterns)
 ├── CLAUDE.md (this file)
 ├── GEMINI.md (synced with CLAUDE.md)
 ├── AGENTS.md (synced with CLAUDE.md)
@@ -43,6 +46,72 @@ youtube-video-project/
 ├── PUBLISH_METADATA.md (created by pre-upload)
 └── TIME_LOG.md (created by time-tracker)
 ```
+
+---
+
+## Framework Documents
+
+The framework provides the foundation for all content critique and quality assessment. All agents (especially @script-critic) reference these documents to enforce proven YouTube success patterns.
+
+### 📘 Universal Principles (`context/01-universal-principles.md`)
+
+The 8 non-negotiable laws of YouTube success that apply to ALL content types:
+
+1. **Hook Law** - 30 seconds or less to answer "Why should I care?"
+2. **Clarity Mandate** - If a 14-year-old with Google can't understand it, you've failed
+3. **Focus Doctrine** - Every second must serve the core purpose
+4. **Pacing Protocol** - Match speed to complexity and attention span
+5. **Engagement Imperative** - Educate AND entertain
+6. **Completeness Covenant** - Deliver 100% of the promise
+7. **Specificity Standard** - Vague = Valueless, every claim needs proof
+8. **Respect Protocol** - Respect viewer intelligence and time
+
+Each principle includes:
+- The Law (core requirement)
+- Requirements (what must be present)
+- Violations (what kills retention)
+- The Standard (how to test compliance)
+
+### 📗 James Willett Framework (`context/02-james-willett-framework.md`)
+
+Content-type-specific patterns with required structures:
+
+**Pattern 1: Tutorial Structure**
+- Hook → Prerequisites → End Result Teaser → Step-by-Step Build → Testing → Next Steps
+- 8-item quality checklist
+- Tutorial-specific violations to avoid
+
+**Pattern 2: Review Structure**
+- Hook → Context → The Good → The Bad → Comparison → Verdict
+- 8-item quality checklist
+- Review-specific violations to avoid
+
+**Pattern 3: Opinion Piece Structure**
+- Hook → Context Setting → Your Argument → Counterarguments → Implications → Conclusion
+- 8-item quality checklist
+- Opinion-specific violations to avoid
+
+**Pattern 4: Course Creation Content Structure**
+- Hook → The Problem → Solution Framework → Tactical Implementation → Before/After → Action Steps
+- 8-item quality checklist
+- Course content-specific violations to avoid
+
+**Each pattern includes:**
+- Required structure (exact sections needed)
+- Specific violations for that content type
+- Signature elements expected
+- Quality checklist for validation
+
+### 🎯 How Framework Enforcement Works
+
+1. **@script-critic loads both framework documents** before any review
+2. **Identifies content type** (Tutorial/Review/Opinion/Course)
+3. **Selects appropriate pattern** to enforce
+4. **Chooses critic personality** based on primary weaknesses
+5. **References specific framework violations** in every critique
+6. **Scores framework compliance** (Universal Principles + Pattern Structure + Quality Checklist)
+
+**The framework is law.** Following it = YouTube success. Violating it = algorithm burial.
 
 ---
 
@@ -136,34 +205,57 @@ Gatling stress testing
 ---
 
 ### 😈 @script-critic
-**Purpose:** Brutally honest, snarky script critique  
-**Use when:** You have a draft and need tough-love feedback  
+**Purpose:** Framework-driven brutally honest script critique with three distinct personalities
+**Use when:** You have a draft and need tough-love feedback
 **What it does:**
-- Provides harsh but fair critique with high standards
-- Evaluates: hook, clarity, focus, pacing, engagement, completeness
-- Rates scripts 1-10 (most get 4-7, earning 8+ is rare)
-- Points to specific issues with specific fixes
-- CAN be pleased if work is genuinely good
+- Loads and enforces the James Willett framework documents
+- References SPECIFIC framework violations in every critique
+- Uses one of three distinct critic personalities based on script weaknesses
+- Rates scripts 1-10 with framework compliance metrics
+- Points to exact violations with framework references
+- CAN be pleased if framework compliance is high
 - Roasts the work, not you personally
 
-**Personality:** Snarky, teasing, high standards, constructive beneath the snark
+**The Three Critics:**
+1. **👑 Pattern Enforcer** - Obsessed with content-type pattern structures (Tutorial/Review/Opinion/Course)
+2. **🔮 Principle Purist** - Obsessed with the 8 Universal Principles (Hook Law, Clarity Mandate, etc.)
+3. **🎯 Specificity Sniper** - Obsessed with hunting vague language, fluff, and padding
+
+**Framework Requirements:**
+- Requires `context/01-universal-principles.md` (8 laws of YouTube success)
+- Requires `context/02-james-willett-framework.md` (content-type patterns)
+- Automatically selects appropriate critic personality
+- All criticism references specific framework violations
 
 **Example critique:**
 ```
 @script-critic
+🔄 Loading framework documents...
+✅ Framework loaded. Initiating review.
+
+Content Type: Tutorial
+Pattern to enforce: Pattern 1 - Tutorial Structure
+Active Personality: Pattern Enforcer
+
 Well, well, well... let's see what we have here.
 
 **Hook/Opening: 3/10**
-"Today I'm going to show you Gatling"? Really? That's your hook? 
-I've seen paint drying with more excitement. Fix this.
+Principle 1, Hook Law VIOLATION: "You have 30 seconds or less to answer
+Why should I care?" You took 47 seconds. Framework says: immediate value
+proposition within 5 seconds. You failed.
 
-**Section 2 - Installation: 7/10**
-Okay, I'll give you this - these steps are actually clear. Someone 
-could follow this. Fine.
+**Prerequisites Section: MISSING**
+Tutorial Pattern requires "Prerequisites (30s-2m)" as Section 2.
+You have ZERO prerequisites listed. Tutorial-Specific Violation:
+"No prerequisites listed" ❌
 
-**The Verdict: 5/10**
-Has potential but needs work. Fix that terrible hook and explain 
-your jargon before throwing it at viewers.
+**THE VERDICT: 4/10**
+Framework Compliance:
+- Universal Principles: 2/8 passed
+- Pattern Structure: 3/6 required elements present
+- Quality Checklist: 1/8 items met
+
+Fix the hook (Principle 1) and add Prerequisites (Pattern 1, Section 2) FIRST.
 ```
 
 ---
