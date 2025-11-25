@@ -18,14 +18,18 @@ This framework consists of specialized AI agents, commands, and hooks that help 
 youtube-video-project/
 ├── .claude/
 │   ├── agents/
-│   │   ├── time-tracker.md
-│   │   ├── script-start.md
-│   │   ├── script-help.md
-│   │   ├── script-interview.md
-│   │   ├── script-critic.md
-│   │   ├── thumbnail-ideas.md
-│   │   ├── script-to-markdown.md
-│   │   └── pre-upload.md
+│   │   ├── misc/
+│   │   │   ├── time-tracker.md
+│   │   │   └── update-docs.md
+│   │   ├── script/
+│   │   │   ├── script-critic.md
+│   │   │   ├── script-help.md
+│   │   │   ├── script-interview.md
+│   │   │   ├── script-start.md
+│   │   │   └── script-to-markdown.md
+│   │   └── youtube/
+│   │       ├── pre-upload.md
+│   │       └── thumbnail-ideas.md
 │   ├── commands/
 │   │   └── sync-context.md
 │   └── hooks/
